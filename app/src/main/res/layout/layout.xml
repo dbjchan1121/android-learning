@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/cost_of_service"
+        android:hint="@string/cost"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        />
+
+    <TextView
+        android:id="@+id/service_question"
+        android:layout_marginBottom="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/purple_200"
+        android:text="@string/服务咋样" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/option_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/牛逼"/>
+
+        <RadioButton
+            android:id="@+id/option_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/嗨行"/>
+
+        <RadioButton
+            android:id="@+id/option_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/一般"/>
+    </RadioGroup>
+
+    <Switch
+        android:checked="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/向上取整"/>
+
+    <Button
+        android:id="@+id/btn_go_to_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/赏赐" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tip_amount"
+        android:textAlignment="viewEnd"/>
+</LinearLayout>
