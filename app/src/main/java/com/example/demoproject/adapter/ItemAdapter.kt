@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+
 import com.example.demoproject.R
 import com.example.demoproject.model.Affirmation
 
@@ -16,6 +17,7 @@ class ItemAdapter(private val context: Context, private val dataset: List<Affirm
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.item_title)
+
     }
 
     /**
@@ -43,5 +45,6 @@ class ItemAdapter(private val context: Context, private val dataset: List<Affirm
         val item = dataset[position]
 
         holder.textView.text = context.resources.getString(item.stringResourceId)
+        holder.textView.paint.isFakeBoldText = true;
     }
 }
