@@ -4,12 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.ComponentActivity
-import androidx.recyclerview.widget.RecyclerView
 import com.example.demoproject.R
-import com.example.demoproject.adapter.ItemAdapter
-import com.example.demoproject.data.Datasource
+
 
 class MainActivity : ComponentActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,30 +16,23 @@ class MainActivity : ComponentActivity() {
 //        binding = LoginActivityBinding.inflate(layoutInflater)
 
 
-        setContentView(R.layout.affirmation_activity)
+        setContentView(R.layout.layout)
 
-        val myDataset = Datasource().loadAffirmations()
-
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-
-        recyclerView.adapter = ItemAdapter(this, myDataset)
-
-        recyclerView.setHasFixedSize(true)
-
-//        setContentView(R.layout.layout)
-
-
-
-//        findViewById<Button>(R.id.btn_go_to_login).setOnClickListener {
+        findViewById<Button>(R.id.btn_go_to_login).setOnClickListener {
+            val intent = Intent(this, AffirmationActicity::class.java)
 //            val intent = Intent(this, HtmlActivity::class.java)
-//            startActivity(intent)
-////                for (i in 0 until 3) {
-////                    startActivity(intent)
-////                }
-//        }
+
+
+            startActivity(intent)
+//                for (i in 0 until 3) {
+//                    startActivity(intent)
+//                }
+        }
 
 
     }
+
+
 }
 
 

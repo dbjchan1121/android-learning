@@ -4,19 +4,25 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+//import com.bumptech.glide.Glide
 
 import com.example.demoproject.R
+import com.example.demoproject.bean.UserBean
 import com.example.demoproject.model.Affirmation
 
 
-class ItemAdapter(private val context: Context, private val dataset: List<Affirmation>) :
+class ItemAdapter(private val context: Context, private val dataset: List<UserBean>) :
+//class ItemAdapter(private val context: Context, private val dataset: List<Affirmation>) :
     RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView = view.findViewById(R.id.item_title)
+        val nameTextView: TextView = view.findViewById(R.id.item_title)
+        val idTextView : TextView = view.findViewById(R.id.item_id)
+        val avatarImageView: ImageView = view.findViewById(R.id.user_avatar)
 
     }
 
@@ -42,9 +48,13 @@ class ItemAdapter(private val context: Context, private val dataset: List<Affirm
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val item = dataset[position]
+        val user = dataset[position]
 
-        holder.textView.text = context.resources.getString(item.stringResourceId)
-        holder.textView.paint.isFakeBoldText = true;
+//        holder.textView.text = context.resources.getString(item.stringResourceId)
+        holder.nameTextView.text = user.name
+        holder.nameTextView.paint.isFakeBoldText = true;
+        holder.idTextView.text = "ID:".plus(user.id.toString())
+//        Glide.with(holder.avatarImageView).load(user.avatar).into(holder.avatarImageView)
+//        holder.avatarImageView.
     }
 }

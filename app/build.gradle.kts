@@ -2,7 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.devtools.ksp") version "2.1.10-1.0.31" // 如果你使用 ksp
 }
+
 
 android {
     namespace = "com.example.demoproject"
@@ -64,4 +66,17 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    // rxhttp
+//    val rxhttpVersion = "3.3.1"
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+//    implementation("com.github.liujingxing.rxhttp:rxhttp:$rxhttpVersion")
+    // 选择 kapt 或 ksp，一般推荐 ksp（性能更好）
+//    ksp("com.github.liujingxing.rxhttp:rxhttp-compiler:$rxhttpVersion")
+
+//    implementation("com.github.bumptech.glide:glide:4.11.0")
+//    ksp("com.github.bumptech.glide:compiler:4.11.0")
+//
+//    implementation(libs.androidx.exifinterface)
+
+
 }

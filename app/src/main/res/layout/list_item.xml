@@ -33,8 +33,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@+id/user_avatar"
         app:layout_constraintBottom_toBottomOf="@+id/user_avatar"
-        android:layout_marginStart="16dp"
-        android:text="ID: 123456"/>
+        android:layout_marginStart="16dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="71dp"
@@ -65,7 +64,7 @@
         android:layout_height="24dp"
         android:id="@+id/ic_close"
         tools:ignore="MissingConstraints"
-        android:src="@drawable/icon_close"
+        android:src="@drawable/img_close"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,6 +1,5 @@
 package com.example.demoproject.bean
 
-import android.net.http.UrlRequest
 
 enum class Status(val value: Int) {
     INACTIVE(0),
