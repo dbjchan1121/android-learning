@@ -1,22 +1,18 @@
 package com.example.demoproject.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-
 import com.example.demoproject.R
 import com.example.demoproject.bean.Status
 import com.example.demoproject.bean.UserBean
-import com.example.demoproject.model.Affirmation
 
 
 class ItemAdapter(private val context: Context, private val dataset: MutableList<UserBean>) :
@@ -26,7 +22,7 @@ class ItemAdapter(private val context: Context, private val dataset: MutableList
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val nameTextView: TextView = view.findViewById(R.id.item_title)
-        val idTextView : TextView = view.findViewById(R.id.item_id)
+        val idTextView: TextView = view.findViewById(R.id.item_id)
         val avatarImageView: ImageView = view.findViewById(R.id.user_avatar)
         val acceptItem: AppCompatButton = view.findViewById(R.id.action_btn)
         val closeItem: ImageButton = view.findViewById(R.id.ic_close)
@@ -75,16 +71,11 @@ class ItemAdapter(private val context: Context, private val dataset: MutableList
         }
 
         holder.acceptItem.setOnClickListener {
-            Log.d("adapter", user.toString())
             user.status = Status.ACTIVE
             notifyItemChanged(position)
-            Log.d("adapter", user.toString())
-
         }
 
         holder.closeItem.setOnClickListener {
-            Log.d("adapter", user.toString())
-
             dataset.removeAt(position)
             notifyItemChanged(position)
             notifyItemRangeChanged(position, dataset.size)
