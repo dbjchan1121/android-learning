@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.RecyclerView
 import com.example.demoproject.R
 import com.example.demoproject.adapter.ItemAdapter
@@ -21,7 +22,7 @@ class AffirmationActicity : ComponentActivity() {
     private val client = OkHttpClient()
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ItemAdapter
-    private var userList: List<UserBean> = listOf()
+    private var userList: MutableList<UserBean> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +33,7 @@ class AffirmationActicity : ComponentActivity() {
         adapter = ItemAdapter(this, userList)
         recyclerView.adapter = adapter
         recyclerView.setHasFixedSize(true)
-
+        recyclerView.itemAnimator = null
 
         fetchDataFromServer()
 
@@ -91,7 +92,7 @@ class AffirmationActicity : ComponentActivity() {
         }
     }
 
-    private fun parseJsonToUserList(json: String?): List<UserBean> {
+    private fun parseJsonToUserList(json: String?): MutableList<UserBean> {
         val userList = mutableListOf<UserBean>()
         val jsonObject = JSONObject(json)
         val dataArray = jsonObject.getJSONArray("data")

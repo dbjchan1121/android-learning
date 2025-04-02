@@ -2,7 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("com.google.devtools.ksp") version "2.1.10-1.0.31" // 如果你使用 ksp
+    id("com.google.devtools.ksp") version "2.1.10-1.0.31" // ksp
+    id("kotlin-kapt") // kapt
 }
 
 
@@ -42,6 +43,7 @@ android {
     }
 }
 
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -73,8 +75,14 @@ dependencies {
     // 选择 kapt 或 ksp，一般推荐 ksp（性能更好）
 //    ksp("com.github.liujingxing.rxhttp:rxhttp-compiler:$rxhttpVersion")
 
-//    implementation("com.github.bumptech.glide:glide:4.11.0")
-//    ksp("com.github.bumptech.glide:compiler:4.11.0")
+    implementation("com.github.bumptech.glide:glide:4.12.0") {
+//        exclude group: 'com.android.support'
+        exclude(
+            "com.android.support"
+        )
+    }
+
+    kapt("com.github.bumptech.glide:compiler:4.12.0")
 //
 //    implementation(libs.androidx.exifinterface)
 
