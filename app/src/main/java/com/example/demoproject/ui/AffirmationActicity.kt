@@ -105,7 +105,7 @@ class AffirmationActicity : ComponentActivity() {
             val user = UserBean(
                 avatar = userObject.getString("avatar"),
                 name = userObject.getString("name"),
-                id = userObject.getInt("id"),
+                id = userObject.getString("id"),
                 status = status
             )
 

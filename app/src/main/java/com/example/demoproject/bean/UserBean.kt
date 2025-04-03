@@ -16,6 +16,6 @@ enum class Status(val value: Int) {
 data class UserBean(
     var avatar: String = "",
     var name: String = "",
-    var id: Int = -1,
+    var id: String = "",
     var status: Status = Status.INACTIVE
 )

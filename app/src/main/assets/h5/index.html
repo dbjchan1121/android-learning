@@ -1,23 +1,21 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        #box {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border: 1px solid red;
-            line-height: 200px;
-            text-align: center;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebView示例</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="box">hello android !</div>
+    <div class="container">
+        <h1>欢迎使用WebView示例</h1>
+        <div class="card">
+            <h2>这是一个示例卡片</h2>
+            <p>点击下面的按钮来测试JavaScript功能</p>
+            <button id="testButton">点击我</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script src="./_next/script.js"></script>
 </body>
-</html>
+</html> 

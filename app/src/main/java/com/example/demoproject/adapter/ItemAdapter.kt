@@ -55,7 +55,7 @@ class ItemAdapter(private val context: Context, private val dataset: MutableList
 //        holder.textView.text = context.resources.getString(item.stringResourceId)
         holder.nameTextView.text = user.name
         holder.nameTextView.paint.isFakeBoldText = true;
-        holder.idTextView.text = "ID:".plus(user.id.toString())
+        holder.idTextView.text = "ID:".plus(user.id)
         Glide.with(holder.avatarImageView).load(user.avatar).into(holder.avatarImageView)
 
         if (user.status == Status.ACTIVE) {

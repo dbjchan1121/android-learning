@@ -18,8 +18,19 @@ class MainActivity : ComponentActivity() {
 
         setContentView(R.layout.layout)
 
-        findViewById<Button>(R.id.btn_go_to_login).setOnClickListener {
+        findViewById<Button>(R.id.btn_go_to_list_1).setOnClickListener {
             val intent = Intent(this, AffirmationActicity::class.java)
+//            val intent = Intent(this, HtmlActivity::class.java)
+
+
+            startActivity(intent)
+//                for (i in 0 until 3) {
+//                    startActivity(intent)
+//                }
+        }
+
+        findViewById<Button>(R.id.btn_go_to_list_2).setOnClickListener {
+            val intent = Intent(this, HtmlActivity::class.java)
 //            val intent = Intent(this, HtmlActivity::class.java)
 
 

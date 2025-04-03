@@ -41,6 +41,10 @@ android {
         compose = true
         viewBinding = true
     }
+    aaptOptions {
+        ignoreAssetsPattern = "!._"
+    }
+
 }
 
 
